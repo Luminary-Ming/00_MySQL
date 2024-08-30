@@ -1,0 +1,31 @@
+create database test;
+
+use test;
+
+create table student(sid integer,sname varchar(20),ssex char(2), sage integer,birthday date,score double,classId integer);
+
+insert into student 
+values
+(1,'张三','男',23,'2016-08-04',91.5,101),
+(2,'李四','男',23,'2016-02-01',83,102),
+(3,'王五','女',24,'2015-11-28',82.5,102),
+(4,'赵六','女',23,'2016-05-24',94,103),
+(5,'刘七','男',22,'2017-02-10',79.5,101),
+(6,'于八','女',22,'2017-06-10',null,103);
+
+select sname,score,score+5 from student;
+
+select distinct sage,classid from student;
+
+select * from student where (score>90 or socre<60) and classid = 101;
+
+select * from student where score is null and classid = 103;
+
+select * from student where score>=90 && score<=100 && birthday like '%2016%';
+
+select * from student where classid=101 || classid=102 && score>=60;
+
+
+
+
+

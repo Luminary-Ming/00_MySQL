@@ -1,0 +1,70 @@
+create database t_s;
+
+use t_s;
+
+
+create table student(sno varchar(7) primary key,sname varchar(10) not null,ssex varchar(2),sage integer,dept varchar(20));
+
+desc student;
+
+create table course(cno varchar(10) primary key,cname varchar(20) not null,credit integer,semester integer);
+
+desc course;
+
+create table sc(sno varchar(7),cno varchar(10),grade integer,primary key (sno,cno));
+
+desc sc;
+
+insert into student 
+values
+(0811101,'李勇','男',21,'计算机系'),
+(0811102,'刘晨','男',20,'计算机系'),
+(0811103,'王敏','女',20,'计算机系'),
+(0811104,'张小红','女',19,'计算机系'),
+(0821101,'张立','男',20,'信息管理系'),
+(0821102,'吴宾','女',22,'信息管理系'),
+(0821103,'张海','男',19,'信息管理系'),
+(0831101,'钱小平','女',21,'通信工程系'),
+(0831102,'王大力','男',20,'通信工程系'),
+(0831103,'张珊珊','女',19,'通信工程系');
+
+select * from student;
+
+insert into course
+values
+('C001','高等数学',4,1),
+('C002','大学英语',3,1),
+('C003','大学英语',3,2),
+('C004','计算机文化学',2,2),
+('C005','Java',2,3),
+('C006','数据库基础',4,5),
+('C007','数据结构',4,4),
+('C008','计算机网络',4,4);
+
+select * from course;
+
+insert into sc
+values
+(0811101,'C001',96),
+(0811101,'C002',80),
+(0811101,'C003',84),
+(0811101,'C005',62),
+(0811102,'C001',92),
+(0811102,'C002',90),
+(0811102,'C004',84),
+(0811102,'C006',76),
+(0811102,'C003',85),
+(0811102,'C005',73),
+(0811102,'C007',null),
+(0811103,'C001',50),
+(0811103,'C004',80),
+(0831101,'C001',50),
+(0831101,'C004',80),
+(0831102,'C007',null),
+(0831103,'C004',78),
+(0831103,'C005',65),
+(0831103,'C007',null);
+
+select * from sc;
+
+
